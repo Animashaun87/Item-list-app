@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text</title>
+</head>
+<body>
+	 <div id="tag">
+          <p id="p1">Bidemi</p>
+     </div>
+     <div id="myDiv"></div>
+     <ul id="myList">
+     	<li>Apple</li>
+     </ul>
+
+    <div id="div1">
+      <p id="par">This is a paragraph</p>
+      <p id="par2">This is another paragraph</p>
+    </div>
+
+    <script>
+      var parent = document.getElementById('div1');
+      var child = document.getElementById('par');
+      parent.removeChild(child);
+      console.log(child);
+    </script>
+
+    <script>
+      const p1 = document.getElementById("p1");
+      p1.innerHTML = "Animashaun";
+
+      var createTag = document.createElement("p");
+      createTag.innerHTML = "I just created a new p tag with javascript";
+      document.getElementById("tag").appendChild(createTag);
+      console.log(createTag);
+
+      const myDiv = document.getElementById("myDiv");
+      const strong = document.createElement('strong');
+      const em = document.createElement('em');
+      const myTextNode = document.createTextNode('simple text');
+      strong.textContent = 'strong';
+      em.textContent = 'emphasized';
+      myDiv.append(strong, em, myTextNode);
+
+      const myList = document.getElementById('myList');
+      const fruitList = ['Banana', 'Mango', 'Lemon', 'Gueva', 'Cucumber'];
+
+      for (let fruit of fruitList) {
+      	const newListItem = document.createElement('li');
+      	newListItem.textContent = fruit;
+      	myList.appendChild(newListItem);
+      }
+      const newList = document.createElement('li');
+      newList.textContent = 'Banana';
+      myList.appendChild(newList);
+    </script>
+
+</body>
+</html>
